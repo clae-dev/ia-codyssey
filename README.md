@@ -46,7 +46,7 @@ echo hello
 exit
 
 
-![ubuntu](images/ubuntu컨테이너.png)
+![ubuntu](images/ubuntu 컨테이너.png)
 
 컨테이너 내부에서 파일 목록 확인 및 문자열 출력 명령어를 실행하였으며  
 컨테이너 내부는 하나의 독립된 리눅스 환경처럼 동작한다는 것을 확인하였습니다.
@@ -59,7 +59,7 @@ exit
 FROM nginx:alpine
 COPY app/ /usr/share/nginx/html/
 
-![dockerfile](images/Dockerfile내용.png)
+![dockerfile](images/Dockerfile 내용.png)
 
 Dockerfile을 이용하면 원하는 실행 환경을 이미지로 만들어 재사용할 수 있습니다.
 
@@ -85,8 +85,7 @@ docker run -d -p 8080:80 --name my-web my-web:1.0
 
 http://localhost:8080
 
-![web](images/웹컨테이너실행.png)
-
+![web](images/웹 컨테이너 실행.png)
 포트 매핑을 통해 호스트 PC의 8080 포트와  
 컨테이너의 80 포트를 연결하였습니다.
 
@@ -103,8 +102,7 @@ index.html 파일을 수정한 후 브라우저를 새로고침하였을 때
 
 이를 통해 호스트 PC와 컨테이너가 파일을 공유하고 있다는 것을 확인하였습니다.
 
-![bind](images/바인드마운트.png)
-
+![bind](images/바인드 마운트.png)
 Bind Mount는 호스트 PC와 컨테이너가 동일한 파일을 공유할 때 사용하는 기능입니다.
 
 ---
@@ -126,7 +124,6 @@ cat /data/test.txt
 데이터가 유지되는 것을 확인하였습니다.
 
 ![volume](images/볼륨.png)
-
 이를 통해 Docker Volume은 컨테이너를 삭제하더라도  
 데이터를 유지할 수 있다는 것을 확인하였습니다.
 
@@ -140,7 +137,6 @@ docker images
 
 ![ps](images/컨테이너 목록.png)
 ![images](images/이미지 목록.png)
-
 docker ps -a 명령어를 통해 컨테이너 목록을 확인하였으며  
 docker images 명령어를 통해 생성된 이미지 목록을 확인하였습니다.
 
