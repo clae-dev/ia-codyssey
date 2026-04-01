@@ -145,7 +145,7 @@ echo hello
 exit
 ```
 
-![ubuntu-container](images/ubuntu-container.png)
+![ubuntu-container](images/ubuntu%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88.png)
 
 컨테이너 내부에서 파일 목록 확인 및 문자열 출력 명령어를 실행하였으며  
 컨테이너 내부는 하나의 독립된 리눅스 환경처럼 동작한다는 것을 확인하였습니다.
@@ -171,7 +171,7 @@ COPY app/ /usr/share/nginx/html/
 - `FROM nginx:alpine` : nginx가 설치된 경량 리눅스 이미지를 베이스로 사용
 - `COPY app/` : 로컬의 app 폴더를 nginx 웹 루트 경로로 복사하여 커스텀 페이지 제공
 
-![dockerfile](images/dockerfile.png)
+![dockerfile](images/Dockerfile%20%EB%82%B4%EC%9A%A9.png)
 
 Dockerfile을 이용하면 원하는 실행 환경을 이미지로 만들어 재사용할 수 있습니다.
 
@@ -185,7 +185,7 @@ Dockerfile을 이용하여 웹 서버 이미지를 생성하였습니다.
 docker build -t my-web:1.0 .
 ```
 
-![image-build](images/image-build.png)
+![image-build](images/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%B9%8C%EB%93%9C.png)
 
 `docker build` 명령어를 통해 Dockerfile을 기반으로 새로운 이미지를 생성하였습니다.
 
@@ -205,7 +205,7 @@ docker run -d -p 8080:80 --name my-web my-web:1.0
 http://localhost:8080
 ```
 
-![web-container](images/web-container.png)
+![web-container](images/%EC%9B%B9%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%EC%8B%A4%ED%96%89.png)
 
 ### 포트 매핑이 필요한 이유
 
@@ -233,9 +233,9 @@ docker logs my-web
 docker stats --no-stream
 ```
 
-![container-list](images/container-list.png)
+![container-list](images/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%20%EB%AA%A9%EB%A1%9D.png)
 
-![image-list](images/image-list.png)
+![image-list](images/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%AA%A9%EB%A1%9D.png)
 
 ---
 
@@ -250,7 +250,7 @@ docker run -d -p 8082:80 -v ${PWD}/app:/usr/share/nginx/html nginx
 `index.html` 파일을 수정한 후 브라우저를 새로고침하였을 때  
 컨테이너 내부 웹 페이지 내용이 즉시 변경되는 것을 확인하였습니다.
 
-![bind-mount](images/bind-mount.png)
+![bind-mount](images/%EB%B0%94%EC%9D%B8%EB%93%9C%20%EB%A7%88%EC%9A%B4%ED%8A%B8.png)
 
 Bind Mount는 호스트 PC와 컨테이너가 **동일한 파일을 실시간으로 공유**할 때 사용하는 기능입니다.  
 개발 중 코드를 수정하면 컨테이너 재시작 없이 바로 반영되어 개발 효율이 높아집니다.
@@ -283,7 +283,7 @@ cat /data/test.txt
 # hello → 데이터 유지 확인
 ```
 
-![volume](images/volume.png)
+![volume](images/%EB%B3%BC%EB%A5%A8.png)
 
 컨테이너를 삭제하더라도 볼륨에 저장된 데이터는 유지되는 것을 확인하였습니다.
 
@@ -423,7 +423,7 @@ services:
       - "8090:80"
 ```
 
-![compose-yml](images/compose-yml.png)
+![compose-yml](images/docker-compose.yml%20%ED%8C%8C%EC%9D%BC%20%ED%99%94%EB%A9%B4.png)
 
 ```powershell
 # Compose로 서비스 실행
@@ -433,7 +433,7 @@ docker compose up -d
 docker compose ps
 ```
 
-![compose-up](images/compose-up.png)
+![compose-up](images/docker%20compose%20up%20-d%20%EC%8B%A4%ED%96%89%20%ED%99%94%EB%A9%B4.png)
 
 **배움 포인트:**  
 `docker run` 명령어로 매번 옵션을 입력하던 방식이 `docker-compose.yml`이라는 **문서화된 실행 설정**으로 바뀝니다.  
@@ -463,7 +463,7 @@ docker compose up -d
 docker compose ps
 ```
 
-![compose-multi](images/compose-multi.png)
+![compose-multi](images/docker%20compose%20ps%20(%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%202%EA%B0%9C%20%EB%96%A0%EC%9E%88%EB%8A%94%20%ED%99%94%EB%A9%B4).png)
 
 `docker compose ps` 결과에서 `docker-web-ubuntu-1`과 `docker-web-web-1` 두 컨테이너가  
 동시에 실행되는 것을 확인하였습니다.
@@ -490,7 +490,7 @@ docker compose logs
 docker compose down
 ```
 
-![compose-ps](images/compose-ps.png)
+![compose-ps](images/docker%20compose%20ps%20%EA%B2%B0%EA%B3%BC%20%ED%99%94%EB%A9%B4.png)
 
 **배움 포인트:**  
 `up / down / ps / logs` 네 가지 명령으로 서비스의 **실행 → 상태 확인 → 로그 확인 → 종료** 전체 사이클을 관리할 수 있습니다.
@@ -506,7 +506,7 @@ docker compose down
 PORT=8092
 ```
 
-![env-file](images/env-file.png)
+![env-file](images/.env%ED%8C%8C%EC%9D%BC.png)
 
 **docker-compose.yml**
 ```yaml
@@ -524,7 +524,7 @@ docker compose up -d
 # localhost:8092 로 접속 확인
 ```
 
-![env-port](images/env-port.png)
+![env-port](images/localhost%20%EC%A0%91%EC%86%8D%20%ED%99%94%EB%A9%B4.png)
 
 **배움 포인트:**  
 포트, 환경 모드, DB 비밀번호 같은 **설정값을 코드에서 분리**할 수 있습니다.  
@@ -548,7 +548,7 @@ cat ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 ```
 
-![ssh-github](images/ssh-github.png)
+![ssh-github](images/SSH%20GitHub%20%EC%97%B0%EA%B2%B0.png)
 
 `Hi clae-dev! You've successfully authenticated` 메시지를 통해 SSH 인증이 정상적으로 완료된 것을 확인하였습니다.
 
